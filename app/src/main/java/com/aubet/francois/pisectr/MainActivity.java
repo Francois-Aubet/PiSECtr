@@ -77,12 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_copi:
                 if(!State.connectedPi) {
                     sock.interrupt();
-                    sock = new SocketManager(queue, "192.168.0.53", 20009);
+                    sock = new SocketManager(queue, "192.168.0.24", 20009);
                     sock.start();
                 }
                 break;
             case R.id.button_cowi:
-                    sendCommand("getWIFI");
                     sendCommand("startWIFI");
                     State.wifiSSID = ssid.getText().toString();
                     State.wifiPass = pass.getText().toString();
