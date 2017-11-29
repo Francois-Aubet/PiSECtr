@@ -1,26 +1,13 @@
-package com.aubet.francois.pisectr;
+package com.aubet.francois.VSLwatchApp;
 
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.InterruptedIOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.concurrent.BlockingQueue;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 /**
  * Created by root on 30.10.17.
@@ -60,7 +47,7 @@ public class SocketManager extends Thread {
 			appOutput = new Output(queue,out);
 			appOutput.start();
 
-			com.aubet.francois.pisectr.State.connectedPi = true;
+			com.aubet.francois.VSLwatchApp.State.connectedPi = true;
 
 			appInput.join();
 			appOutput.join();
@@ -72,7 +59,7 @@ public class SocketManager extends Thread {
 			try {
 				if (socket != null)
 					socket.close();
-					com.aubet.francois.pisectr.State.connectedPi = false;
+					com.aubet.francois.VSLwatchApp.State.connectedPi = false;
 					connected = false;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -103,7 +90,7 @@ public class SocketManager extends Thread {
 				} catch (InterruptedException | IOException e) {
 					System.out.println("                                fail");
 					stopRequested = true;
-					com.aubet.francois.pisectr.State.connectionLost();
+					com.aubet.francois.VSLwatchApp.State.connectionLost();
 				}
 				//try {	output.flush();	} catch ( IOException e) {	System.out.println("fail2");}
 				//System.out.println("out");

@@ -1,4 +1,4 @@
-package com.aubet.francois.pisectr;
+package com.aubet.francois.VSLwatchApp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

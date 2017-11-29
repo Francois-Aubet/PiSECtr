@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PiSECtr</string>
+    <string name="app_name">VSLwatchApp</string>
 
     <string name="btn_cowi">Connect pi to wifi</string>
     <string name="btn_cowi_done">Connected to wifi</string>
